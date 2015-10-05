@@ -1,1 +1,1 @@
-glpsol --lp $1.lp --out $1.out
+glpsol --lp $1.lp --output $1.out
