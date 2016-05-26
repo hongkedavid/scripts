@@ -8,6 +8,9 @@ sudo chown nobody:nogroup /var/nfs
 sudo nano /etc/exports
 sudo exportfs -a
 sudo service nfs-kernel-server start
+sudo service nfs-kernel-server status
+sudo ps aux | grep 'nfs'
+sudo ps aux | grep 'mountd'
 
 # Client side
 sudo apt-get update
