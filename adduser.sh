@@ -1,9 +1,9 @@
-# Add a user in Ubuntu 14
-sudo useradd -d /home/xx -m xx -s /bin/bash
-sudo mkdir /home/xx/.ssh
+# Add a user named $USERNAME in Ubuntu
+sudo useradd -d /home/$USERNAME -m $USERNAME -s /bin/bash
+sudo mkdir /home/$USERNAME/.ssh
 sudo vi .ssh/authorized_keys
 sudo chmod 644 .ssh/authorized_keys
-sudo chown xx:xx /home/david/.ssh
+sudo chown -R $USERNAME:$USERNAME /home/david/.ssh
 
 # Grant sudo access
 sudo vi /etc/sudoers
