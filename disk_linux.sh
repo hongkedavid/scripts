@@ -7,3 +7,6 @@ sudo du --max-depth=1 -lh
 
 # List usage of different partitions
 df -lh 
+
+# Create s symbolic link to a fold (useful for relocating file across partitions)
+ln -s $folder $link
