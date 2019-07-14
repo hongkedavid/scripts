@@ -5,4 +5,4 @@ ps -Aef
 ps -ef | grep defunct
 
 # Clean up a zombie process by killing its parent process 
-kill -HUP $(ps -A -ostat,ppid | grep -e '[zZ]'| awk '{ print $2 }')
+sudo kill -HUP $(ps -A -ostat,ppid | grep -e '[zZ]'| awk '{ print $2 }')
