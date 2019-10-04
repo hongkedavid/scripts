@@ -6,4 +6,5 @@ sudo chmod 644 .ssh/authorized_keys
 sudo chown -R $USERNAME:$USERNAME /home/$USERNAME/.ssh
 
 # Grant sudo access
-sudo vi /etc/sudoers
+sudo usermod -aG sudo $USERNAME
+#sudo vi /etc/sudoers
