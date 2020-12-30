@@ -30,3 +30,22 @@ drop table $table
 
 # To clean records of a table
 delete from $table
+
+# To view storage size of a DB
+SELECT table_schema AS "Database", 
+ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
+FROM information_schema.TABLES 
+GROUP BY table_schema;
+
+# To view storage size of tables in a DB
+SELECT
+  TABLE_NAME AS `Table`,
+  ROUND((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024) AS `Size (MB)`
+FROM
+  information_schema.TABLES
+WHERE
+  TABLE_SCHEMA = "$db"
+ORDER BY
+  (DATA_LENGTH + INDEX_LENGTH)
+DESC;
+
