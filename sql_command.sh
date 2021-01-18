@@ -15,17 +15,18 @@ create table $table_name (
 );
 
 # To insert a record
-insert into $table values ($value1, $value2, $value3, ...);
+insert into $table ($col1, $col2, $col3, ...) values ($value1, $value2, $value3, ...);
+
 
 # To update records
 update $table
 set $column1 = $value1, $column2 = $value2, ...
 where $condition;
 
-# To join two tables
-SELECT "$tab1.$attr1", "$tab1.$attr2", "$tab2.$attr1"
-FROM "$tab1"
-INNER JOIN "$tab2" ON "$tab1.$common_attr"="$tab2.$common_attr";
+# To join two tables by a common attribute
+select distinct "$tab1.$col1", "$tab1.$col2", "$tab2.$col1"
+from "$tab1"
+inner join "$tab2" on "$tab1.$common_attr"="$tab2.$common_attr";
 
 # To delete records
 delete from $table where $condition
