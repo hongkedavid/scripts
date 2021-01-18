@@ -15,8 +15,8 @@ create table $table_name (
 );
 
 # To insert a record
-insert into $table ($col1, $col2, $col3, ...) values ($value1, $value2, $value3, ...);
-
+insert into $table values ($value1, $value2, $value3, ...);
+insert into $table ($col1, $col2, $col3) values ($value1, $value2, $value3);
 
 # To update records
 update $table
