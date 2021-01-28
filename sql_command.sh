@@ -5,6 +5,12 @@ show tables
 
 # To show schema of a table
 select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME="$table";
+# Or simply use following syntax
+describe $table;
+show columns from $table;
+
+# To show index of a table
+show index from $table;
 
 # To create a table
 create table $table_name (
@@ -36,6 +42,9 @@ drop table $table
 
 # To clean records of a table
 delete from $table
+
+# To show query plan of a query
+explain/describe $sql_stmt
 
 # To view storage size of a DB
 SELECT table_schema AS "Database", 
