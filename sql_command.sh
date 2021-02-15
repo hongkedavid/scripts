@@ -29,6 +29,10 @@ update $table
 set $column1 = $value1, $column2 = $value2, ...
 where $condition;
 
+# To prepend a prefix to a column
+SET SQL_SAFE_UPDATES = 0;
+update $table set $col = concat('prefix-', $col) where $col not like 'prefix-%';
+
 # To join two tables by a common attribute
 select distinct "$tab1.$col1", "$tab1.$col2", "$tab2.$col1"
 from "$tab1"
@@ -63,4 +67,3 @@ WHERE
 ORDER BY
   (DATA_LENGTH + INDEX_LENGTH)
 DESC;
-
